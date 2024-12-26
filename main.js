@@ -49,7 +49,7 @@ const token = new SkyWayAuthToken({
 
     const buttonArea = document.getElementById("button-area");
     const remoteMediaArea = document.getElementById("remote-media-area");
-    const roomNameInput = document.getElementById("room-name");
+    let roomNameInput = "ADMIN-CALL"//document.getElementById("room-name");
     const myId = document.getElementById("my-id");
     const joinButton = document.getElementById("join");
     const leaveButton = document.getElementById('leave');
@@ -61,12 +61,12 @@ const token = new SkyWayAuthToken({
 
     joinButton.onclick = async () => {
 
-        if (roomNameInput.value === "") return;
+        if (roomNameInput === "") return;
       
         const context = await SkyWayContext.Create(token);
         const room = await SkyWayRoom.FindOrCreate(context, {
             type: "p2p",
-            name: roomNameInput.value,
+            name: roomNameInput,
         });
     
         const me = await room.join();
@@ -128,4 +128,7 @@ const token = new SkyWayAuthToken({
     };
 
   })(); // 1
+
+
+
 
