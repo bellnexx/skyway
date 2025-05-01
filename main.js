@@ -49,7 +49,7 @@ const token = new SkyWayAuthToken({
 
     const buttonArea = document.getElementById("button-area");
     const remoteMediaArea = document.getElementById("remote-media-area");
-    let roomNameInput = "ADMIN-CALL"//document.getElementById("room-name");
+    let roomNameInput = "TAXIREADER-BROADCAST"//document.getElementById("room-name");
     const myId = document.getElementById("my-id");
     const joinButton = document.getElementById("join");
     const leaveButton = document.getElementById('leave');
